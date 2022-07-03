@@ -20,5 +20,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/books', 'BooksController@index');
 Route::post('/books', 'BooksController@store')->middleware(["auth:api", "auth", "auth.admin"]);
-Route::post('/books/{id}/reviews', 'BooksReviewController@store')->middleware(["auth:api", "auth", "auth.admin"]);
-Route::delete('/books/{bookId}/reviews/{reviewId}', 'BooksReviewController@destroy');
+Route::post('/books/{id}/reviews', 'BooksReviewController@store')->middleware(["auth:api", "auth"]);
+Route::delete('/books/{bookId}/reviews/{reviewId}', 'BooksReviewController@destroy')->middleware(["auth:api", "auth", "auth.admin"]);
