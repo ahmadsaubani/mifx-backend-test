@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "a1d85e31-7b76-4a8d-a535-bb53976fe866",
+		"name": "Mifx",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5455116"
+	},
+	"item": [
+		{
+			"name": "Populate  Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/books?authors=1,2,3",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "sortColumn",
+							"value": "avg_review",
+							"description": "title,published_year,avg_review",
+							"disabled": true
+						},
+						{
+							"key": "sortDirection",
+							"value": "desc",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "iusto",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "authors",
+							"value": "1,2,3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Books",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "isbn",
+							"value": "1234567890123",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "asdasdas",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "asdsada",
+							"type": "text"
+						},
+						{
+							"key": "authors[0]",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "authors[1]",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "published_year",
+							"value": "2000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/books?api_token=EFJVm4CiK4219n65Ns8xh3n4YUUzrrBd99L8CY5bwCGRtHqONVAsvdU3mnZM",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "api_token",
+							"value": "EFJVm4CiK4219n65Ns8xh3n4YUUzrrBd99L8CY5bwCGRtHqONVAsvdU3mnZM"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "review",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "asdkasdkasd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/books/1/reviews?api_token=EFJVm4CiK4219n65Ns8xh3n4YUUzrrBd99L8CY5bwCGRtHqONVAsvdU3mnZM",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"1",
+						"reviews"
+					],
+					"query": [
+						{
+							"key": "api_token",
+							"value": "EFJVm4CiK4219n65Ns8xh3n4YUUzrrBd99L8CY5bwCGRtHqONVAsvdU3mnZM"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Review",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/books/1/reviews/181?api_token=D1bKeCYT6VsNaw4dF0cOIchk6tSNoZxAjAOaZKfNoOXkiQZCCoDMHZvUwNWT",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"1",
+						"reviews",
+						"181"
+					],
+					"query": [
+						{
+							"key": "api_token",
+							"value": "D1bKeCYT6VsNaw4dF0cOIchk6tSNoZxAjAOaZKfNoOXkiQZCCoDMHZvUwNWT"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
